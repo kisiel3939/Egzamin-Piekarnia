@@ -1,5 +1,5 @@
 <?php
-include "php/db.php";
+include "db.php";
 ?>
 
 <!DOCTYPE html>
@@ -29,13 +29,13 @@ include "php/db.php";
     </header>
     <main>
         <h4>Wybierz rodzaj wypieków</h4>
-        <form action="php/formularz.php" method="post">
+        <form action="piekarnia.php" method="post">
             <select name="rodzajSelect" id="rodzaje">
                 <?php
-                include "php/formularz.php";
+                include "formularz.php";
 
-                while ($row = $stmt->fetch()) {
-                    echo '<option value=' .  $row[0] . '>' . $row[0] . '</option>';
+                foreach ($data as $d) {
+                    echo '<option value="' . $d . '">' . $d . '</option>';
                 }
                 ?>
             </select>
@@ -47,7 +47,7 @@ include "php/db.php";
                     <th>Gramatura</th>
                     <th>Cena</th>
                 </tr>
-                <?php include "php/formularz.php";
+                <?php include "formularz.php";
                 // while ($row = mysqli_fetch_array($result)) {
                 //     echo '<tr>';
                 //     echo '<td>' . $row[0] . '</td>';
@@ -59,9 +59,6 @@ include "php/db.php";
                 ?>
             </table>
         </form>
-        <table>
-
-        </table>
     </main>
     <footer>
         <p>AUTOR 00000000000</p>

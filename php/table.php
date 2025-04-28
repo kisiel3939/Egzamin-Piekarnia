@@ -3,7 +3,7 @@ include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $stmt = $conn->prepare('SELECT Rodzaj,Nazwa,Gramatura,Cena FROM `wyroby` WHERE Rodzaj=:rodzaj;');
+    $stmt = $conn->prepare('SELECT Rodzaj,Nazwa,Gramatura,Cena FROM `wyroby` WHERE Rodzaj=:rodzaj');
 
     $stmt->bindParam(':rodzaj', $_SESSION['rodzaj'], PDO::PARAM_STR);
     $stmt->execute();

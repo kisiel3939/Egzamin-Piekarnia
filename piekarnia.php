@@ -1,5 +1,6 @@
 <?php
-include "db.php";
+include "php/db.php";
+session_start()
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +32,7 @@ include "db.php";
         <h4>Wybierz rodzaj wypieków</h4>
         <form action="piekarnia.php" method="post">
             <select name="rodzajSelect" id="rodzaje">
-                <?php
-                include "formularz.php";
-
-                foreach ($data as $d) {
-                    echo '<option value="' . $d . '">' . $d . '</option>';
-                }
-                ?>
+                <?php include "php/formularz.php"; ?>
             </select>
             <input type="submit" value="Wybierz">
             <table>
@@ -47,23 +42,26 @@ include "db.php";
                     <th>Gramatura</th>
                     <th>Cena</th>
                 </tr>
-                <?php include "formularz.php";
-                // while ($row = mysqli_fetch_array($result)) {
-                //     echo '<tr>';
-                //     echo '<td>' . $row[0] . '</td>';
-                //     echo '<td>' . $row[1] . '</td>';
-                //     echo '<td>' . $row[2] . '</td>';
-                //     echo '<td>' . $row[3] . '</td>';
-                //     echo '</tr>';
-                // }
-                ?>
+                <?php include 'php/table.php' ?>
             </table>
         </form>
     </main>
     <footer>
         <p>AUTOR 00000000000</p>
         <p>Data: 28.03.2025</p>
+
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
     </footer>
+
 </body>
+
+<?php
+include 'php/db.php';
+$conn = null;
+?>
 
 </html>

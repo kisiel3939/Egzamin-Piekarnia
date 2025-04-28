@@ -23,7 +23,7 @@ try {
 <body>
     <?php
     $rodzajPrp = 'Rodzaj';
-    $stmt = $conn->prepare("SELECT DISTINCT Rodzaj FROM `wyroby` ORDER BY :rodzaje DESC;");
+    $stmt = $conn->prepare("SELECT DISTINCT Rodzaje FROM `wyroby` ORDER BY :rodzaje DESC;");
 
     $stmt->bindParam(':rodzaje', $rodzajPrp);
     $stmt->execute();

@@ -8,7 +8,7 @@ $stmt->execute();
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($data as $row) {
-    echo "<option value='{$row['Rodzaj']}'>{$row['Rodzaj']}</option>";
+  echo "<option value='{$row['Rodzaj']}'>{$row['Rodzaj']}</option>";
 }
 
-$_SESSION['rodzaj'] = $_POST['rodzajSelect'];
+$conn = null;
